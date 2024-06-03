@@ -17,6 +17,7 @@ They are NOT synthesis models - although some of them might be synthesizable. Bu
 You need an understanding of the Verilog Hardware description language - I do not explain what it is and how it works.
 
 The directory layout is 
+```
     --- here | 
     +--- lib | 
     +---- model.v | 
@@ -26,6 +27,7 @@ The directory layout is
     ..... +--- README_1ST.txt 
     +--- dotest.cmd
     +--- gnu_public_license_v3.txt
+```
 
 The lib directory contains the actual source code of the various circuit models.
 
