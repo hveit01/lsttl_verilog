@@ -19,15 +19,15 @@ You need an understanding of the Verilog Hardware description language - I do no
 The directory layout is 
 ```
     --- here 
-	    | 
+        | 
         +--- lib
-		|    | 
+        |    | 
         |    +---- model.v
-		..... 
+        ..... 
         +--- libtest
-		|    +---- model_test.v 
-		|    ..... 
-		+--- README_1ST.txt 
+        |    +---- model_test.v 
+        |    ..... 
+        +--- README_1ST.txt 
         +--- dotest.cmd
         +--- gnu_public_license_v3.txt
 ```
