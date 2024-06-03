@@ -23,7 +23,7 @@ The directory layout is
         +--- lib
         |    | 
         |    +---- model.v
-        ..... 
+        |    ..... 
         +--- libtest
         |    +---- model_test.v 
         |    ..... 
@@ -39,7 +39,12 @@ The libtest directory contains testbenches for each circuit which will exercise 
 The models were developed with Icarus Verilog which can be downloaded from http://iverilog.icarus.com/ Read the appropriate documentation on how to install and run it.
 
 A single (DOS-style) command file is provided to try out the testbenches (dotest.cmd). Enter the libtest directory and execute, from a CMD window, ..\dotest model_test [min|typ|max]
-where "model" is some name of a model, e.g. "sn74ls00".
+where "model" is some name of a model, e.g. "sn74ls00". The argument min/typ/max refer to min, typ, max timing parameters from the datasheet. If you select min, you usually get a zero-delay functional output;
+typ and max will consume time on execution, which means that some outputs will not become stable until some time has passed.
+Not every possible timing parameter has been implemented; in many cases, the timing represent the worst case conditions, e.g. for some full adder device where a change in 
+A or B inputs lead to different output delays. Unfortunately, Icarus verilog does not implement path delays correctly. Other verilog simulators do, but they are
+possibly not free.
+The script assumes that iverilog and other programs are in the PATH.
 
 The script will compile the test bench and run it. It will produce textual output of the tests executed (no "Error" line should occur), and will produce a model_test.vcd file which can be displayed in an appropriate waveform viewer. Icarus verilog comes with a viewer named gtkwave.
 
